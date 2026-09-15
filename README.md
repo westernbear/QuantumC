@@ -16,7 +16,7 @@ Python is widely used for application development due to its easy learning curve
 As quantum hardware advances, the volume of classical data to process will increase, making performance a critical factor.
 [OpenQASM](https://openqasm.com), managed by IBM, is an open-source quantum intermediate representation for describing quantum circuits.
 Quantum hardware architectures vary, necessitating the compilation of theoretical circuits into machine-specific instructions. 
-For instance, Hadamard gates $H$ are converted as $R_Z(\pi/2)\sqrt{X}R_Z(\pi/2)$ in IBM Eagle r3 architecture.
+For instance, Hadamard gates $\mathrm{H}$ are converted as $\mathrm{R}_{\mathrm{X}}(\pi/2)\sqrt{\mathrm{X}}\mathrm{R}_{\mathrm{Z}}(\pi/2)$ in IBM Eagle r3 architecture.
 OpenQASM provides a universal abstraction, enabling theoretical quantum algorithms to be compiled for diverse hardware.
 **QuantumC** leverages the strengths of both C and OpenQASM to facilitate efficient quantum programming.
 
@@ -27,6 +27,7 @@ To generate this state, apply a Hadamard gate ($H$) to `qubit 0`, then apply a c
 Repeat locating controlled-NOT gates between successive qubits (for example, `qubit 1` as a control and `qubit 2` as a target) until `qubit 7`.
 Finally, apply a measurement gate to every qubit to convert the quantum data into classical data for post-processing.
 After this process, we obtain the following quantum circuit.
+
 <div align='center'>
 
 ![Figure 1](./figures/readme_figure_1.png)
@@ -49,7 +50,7 @@ uint8_t eight_qubit_bell_state() {
 
     uint8_t meas = measure(uint8_t, q);
 
-    // Expected to return 0b00000000 == 0 in 50% and 0b11111111 == 255 in 50%.
+    // Expected to return 0b00000000 == 0 with a 50% probability and 0b11111111 == 255 with a 50% probability.
     return meas;
 }
 ```
