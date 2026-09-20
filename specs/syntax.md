@@ -1,6 +1,6 @@
 # Syntax
 
-(extended Backus-Naur form0)
+(extended Backus-Naur form)
 
 ## Start Symbol
 
